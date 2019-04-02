@@ -1,3 +1,16 @@
-.container{
+body{
+    margin: 0;
+    padding: 0;
+    
+}
 
+.container{
+ background-color: #95a5a6;
+
+}
+.title{
+    color: #3498db;
+}
+a{
+    color: red;
 }
