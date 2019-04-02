@@ -1,11 +1,13 @@
 body{
     margin: 0;
-    padding: 0;
-    
+    padding: 5px;
+    border: 0;
+    font-family: sans-serif, Arial;
+    color: whitesmoke;
 }
 
 .container{
- background-color: #95a5a6;
+ background-color: #34495e;
 
 }
 .title{
@@ -13,4 +15,7 @@ body{
 }
 a{
     color: red;
+}
+.yellow{
+    color: yellow;
 }
