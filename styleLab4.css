@@ -41,3 +41,6 @@ table tr:nth-child(odd){
 table, th, td{
     border: dotted 1px black;
 }
+.validation{
+    margin-left: 2%;
+}
