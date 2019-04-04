@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LAB-4</title>
+    <link href="styleLab4.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <h1 class="headerAndFooter">Task list</h1>
+    <form class="f1" action="#" method="post" autocomplete="off" novalidate>
+        <p><label class="labels" for="task">Task</label><br/><input id="task" name="task"
+                                                                    placeholder="Breakfast at Tiffanys"/></p>
+        <p><label class="labels" for="date">Required by</label><br/><input type="date" name="date" id="date"/></p>
+        <p><label class="labels" for="category">Category</label><br/>
+            <select id="category" name="categories">
+                <option selected>Personal</option>
+                <option>Work</option>
+            </select><br/>
+            <input type="submit" value="Save task"/>
+            <input type="reset" value="Clear task"/>
+    </form>
+    <div class="table">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Due</th>
+                <th>Category</th>
+            </tr>
+            <tr>
+                <td>Return library books</td>
+                <td>2013-10-14</td>
+                <td>Personal</td>
+            </tr>
+            <tr>
+                <td>Perform project demo to stakeholders</td>
+                <td>2013-10-14</td>
+                <td>Work</td>
+            </tr>
+            <tr>
+                <td>Meet friends for dinner</td>
+                <td>2013-10-14</td>
+                <td>Personal</td>
+            </tr>
+        </table>
+        <p><input type="submit" value="Add task"/></p>
+    </div>
+    <p class="headerAndFooter">You have 3 tasks</p>
+</div>
+</body>
+</html>
