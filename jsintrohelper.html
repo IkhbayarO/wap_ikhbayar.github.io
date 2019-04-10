@@ -87,6 +87,15 @@
             return m;
         }
 
+        function sum2(a){
+            let s=a.reduce(function (f, s, i, array) {
+                return f+s;
+            })
+            return s;
+        }
+        console.log("Used reduce to find sum of the array sum2([1, 2, 3, 4]) is 10 "+myFunctionTest(10, function () {
+            return sum2([1, 2, 3, 4]);
+        }))
         console.log("Expected output of sum([1, 2, 3, 4]) is 10 " + myFunctionTest(10, function () {
             return sum([1, 2, 3, 4]);
         }));
@@ -103,6 +112,15 @@
             return mul;
         }
 
+        function multiply2(a){
+            let mul=a.reduce(function (f, s, i, array) {
+                return f*s;
+            })
+            return mul;
+        }
+        console.log("Used reduce expected output of multiply2([1, 2, 3, 4]) is 24 " + myFunctionTest(24, function () {
+            return multiply2([1, 2, 3, 4]);
+        }));
         console.log("Expected output of multiply([1, 2, 3, 4]) is 24 " + myFunctionTest(24, function () {
             return multiply([1, 2, 3, 4]);
         }));
@@ -114,6 +132,12 @@
         function reverse(str) {
             return str.split("").reverse().join("");
         }
+        function reverse2(str){
+            return str.split("").reduce((rev, char)=>char+rev);
+        }
+        console.log("Used reduce expected output of reverse2(\"hello\") is \"olleh\" " + myFunctionTest("olleh", function () {
+            return reverse2("hello");
+        }));
 
         console.log("Expected output of reverse(\"hello\") is \"olleh\" " + myFunctionTest("olleh", function () {
             return reverse("hello");
@@ -153,6 +177,15 @@
             }
             return res;
         }
+
+        // function findLongestWord2(array, i){
+        //     let arr2=[];
+        //     arr2.push(array.filter(elem=>elem.length>i));
+        // }
+        // console.log("Used filter expected output of findLongestWord2(3, [\"Hello\", \"hi\", \"this\"]) is [\"Hello\", \"this\"] " +
+        //     myFunctionTest(["Hello", "this"], function () {
+        //         return findLongestWord2(3, ["Hello", "hi", "this"]);
+        //     }));
 
         console.log("Expected output of filterLongWords(3, [\"Hello\", \"hi\", \"this\"]) is [\"Hello\", \"this\"] " +
             myFunctionTest(["Hello", "this"], function () {
