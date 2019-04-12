@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+    <!--<script src="lab9.js" type="text/javascript"/>-->
+    <link rel="stylesheet" , href="lab9.css" , type="text/css">
+    <title>Lab9</title>
+</head>
+<body>
+<div id="error">
+
+
+</div>
+<form id="container" action="#" method="post" autocomplete="off">
+    <label>Name <input id="name" name="name" type="text"/></label><br/>
+    <label>Street <input id="street" name="street" type="text"></label><br/>
+    <label>State
+        <select id="state" name="state">
+            <option>IA</option>
+            <option>CA</option>
+            <option>IL</option>
+        </select>
+    </label><br/>
+    <label>Zip Code <input id="zip" name="zip" type="text"/></label><br/>
+    <label>How many seats? <input id="seats" name="seats" type="number"/></label><br/>
+    <fieldset>
+        <legend>Which taxi do you require?</legend>
+        <label><input class="taxi" name="taxi" type="radio" value="1"/> Car</label><br/>
+        <label><input class="taxi" name="taxi" type="radio"/> Van</label><br/>
+        <label><input class="taxi" name="taxi" type="radio"/> Tuk Tuk</label>
+    </fieldset>
+    <fieldset>
+        <legend>Extras</legend>
+        <label><input class="seat" name="seat" type="checkbox" value="1"/> Baby seat</label><br/>
+        <label><input class="seat" name="seat" type="checkbox"/> Wheelchair Access</label><br/>
+        <label><input class="seat" name="seat" type="checkbox"/> Stock tip</label><br/>
+    </fieldset>
+    <br/>
+    <label>Special Instructions
+        <textarea cols="40" rows="10">
+        </textarea>
+    </label><br/>
+    <input id="submit" type="submit" value="Submit Booking"/>
+</form>
+<script>
+    $(function () {
+        $("#container").on("submit", checkData);
+    });
+
+    function checkData(event) {
+        event.preventDefault();
+        let submitFlag=true;
+        $("#error").empty();
+
+        if ($("#name").val() == "") {
+            $("#error").append("Name should be at least one letter. <br/>");
+            submitFlag=false;
+        } if ($("#zip").val().length !== 5) {
+            $("#error").append("Zip should be 5 numbers. <br/>");
+            submitFlag=false;
+        } if ($("#seats").val()<0 || $("#seats").val>200){
+            $("#error").append("Amount of booking cant be greater than 200. <br/>");
+            submitFlag=false;
+        } if($('input[name="taxi"]:checked').val()===undefined){
+            $("#error").append("Taxi must be checked.  <br/>");
+            submitFlag=false;
+        }if($('input[name="seat"]:checked').val()===undefined){
+            $("#error").append("Seat must be checked.  <br/>");
+            submitFlag=false;
+        }
+        if(submitFlag) {
+            this.submit();
+            $("#error").append("Successful");
+        }
+
+    }
+
+</script>
+</body>
+</html>
